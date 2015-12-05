@@ -1,0 +1,30 @@
+$sudo_green:#50e2c2;
+$deep_blue:#23263a;
+$card_width: 300px;
+$card_height: 200px;
+h1, p {
+    color: $sudo_green;
+    text-align: center;
+}
+body{
+    background: $deep_blue;
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    width: $card_width;
+    height: $card_height;
+    border: $sudo_green 1px solid;
+    h2 {
+        color: $sudo_green;
+    }
+    .reveal {
+        position: absolute;
+        background: white;
+        width: $card_width;
+        height: $card_height;
+        top: 0;
+    }
+}
