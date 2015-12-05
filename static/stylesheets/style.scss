@@ -1,13 +1,16 @@
+@import "mixin.scss";
 $sudo_green:#50e2c2;
 $deep_blue:#23263a;
 $card_width: 300px;
 $card_height: 200px;
-h1, p {
-    color: $sudo_green;
-    text-align: center;
-}
+
 body{
     background: $deep_blue;
+    text-align: center;
+}
+
+h1, p {
+    color: $sudo_green;
     text-align: center;
 }
 
@@ -21,10 +24,25 @@ body{
         color: $sudo_green;
     }
     .reveal {
+        opacity: 0;
         position: absolute;
         background: white;
         width: $card_width;
         height: $card_height;
         top: 0;
+    }
+}
+
+.card {
+    @include transition(all 0.5s ease);
+    .reveal {
+        @include transition(all 0.5s ease);
+        @include transform(rotateY(180deg));
+    }
+    &:hover {
+        @include transform(rotateY(180deg));
+        .reveal {
+            opacity: 1;
+        }
     }
 }
